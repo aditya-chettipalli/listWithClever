@@ -2,58 +2,81 @@
 
 # Housing Market Data Analysis
 
-This project analyzes US state-level housing market data using datasets from Zillow, Redfin, and the US Census Bureau. It cleans, processes, ranks, and visualizes key housing metrics like population, income, sale price, and affordability.
+## Overview
+
+This project involves analyzing housing affordability across U.S. states (including DC and Puerto Rico) using census and Redfin data. The analysis focuses on:
+
+* Total population
+* Median household income
+* Median sale price of homes
+* House affordability ratio (sale price / income)
+
+The final output replicates an Excel spreadsheet and provides additional insights and visualizations.
 
 ## Data Sources
 
-* **KEYS.csv**: Region mappings and state info
-* **CENSUS\_POPULATION\_STATE.tsv**: State-level population estimates
-* **CENSUS\_MHI\_STATE.csv**: Median household income data
-* **REDFIN\_MEDIAN\_SALE\_PRICE.csv**: Redfin median home sale prices by state
+* **KEYS.csv**: Metadata file for matching region names and identifiers.
+* **CENSUS\_POPULATION\_STATE.tsv**: Contains state-wise population data.
+* **CENSUS\_MHI\_STATE.csv**: Includes median household income estimates.
+* **REDFIN\_MEDIAN\_SALE\_PRICE.csv**: Lists the most recent monthly median home sale prices.
 
-## Features
+## Key Processing Steps
 
-* Computes metrics for each state:
+1. **Data Cleaning and Mapping**
 
-  * Total population and population rank
-  * Median household income and rank
-  * Median home sale price and rank
-  * Home affordability ratio and rank
-* Generates readable descriptions ("blurbs") for each metric
-* Saves clean output to a CSV file (`output.csv`)
-* Produces visualizations using Seaborn:
+   * Normalized region names for consistent mapping.
+   * Added a custom entry for Puerto Rico in the Redfin dataset, which was missing originally.
 
-  * Distribution of Median Household Income
-  * Top 10 states by median sale price
-  * Bar plot of house affordability ratio
-  * Scatter plot of median household income vs. median sale price
-  * Correlation Heatmap of Income, Sale Price, and Affordability
+2. **Calculated Metrics**
 
-## Requirements
+   * Total Population
+   * Median Household Income
+   * Median Sale Price
+   * Affordability Ratio
 
-* Python 3.8+
-* pandas
-* numpy
-* matplotlib
-* seaborn
+3. **Ranking and Formatting**
+
+   * Ranked each state for population, income, sale price, and affordability using Excel-style rank suffixes.
+   * Constructed descriptive blurbs for each metric.
+
+4. **Output File**
+
+   * Generated a final CSV matching the Excel OUTPUT tab format.
 
 ## Visualizations
 
+To complement the analysis, the following visualizations were created:
+
 * **Histogram**: Shows the distribution of median household income across states.
-* **Top 10 States by Median Sale Price**: Bar chart highlighting the ten states with the highest median home sale prices.
-* **Bar Plot of House Affordability Ratio**: Visualizes how affordable housing is across states by comparing home prices to median household income.
-* **Scatter Plot of Median Household Income vs. Median Sale Price**: Illustrates the relationship between income and home price, identifying trends and outliers.
-* **Correlation Heatmap**: Displays the relationship between income, home price, and affordability, helping identify strong or weak correlations between metrics.
+* **Bar Plot**: Highlights the top 10 states by median sale price.
+* **Bar Plot**: Illustrates house affordability ratio for each state.
+* **Scatter Plot**: Displays correlation between income and sale price.
+* **Correlation Heatmap**: Visualizes relationships between income, home price, and affordability ratio.
+
+## Notes
+
+* Normalization of region names ensured accurate mapping between datasets.
+* Special handling was implemented for missing or mismatched data entries, particularly for DC and Puerto Rico.
+
+## Dependencies
+
+* pandas
+* numpy
+* seaborn
+* matplotlib
+
+## Output
+
+* `output.csv`: Final cleaned and enriched data file.
+* Visual plots exported as images or displayed inline in Jupyter Notebook.
 
 ## Usage
 
-Place the CSV files in your local directory and run the notebook. The output will be saved as output.csv and visualizations will display in the notebook itself.
+This project can be run in a Jupyter Notebook environment. Ensure all required data files are correctly placed and paths updated before execution.
 
+---
 
-> **Note**: Puerto Rico was not originally included in the Redfin median sale price dataset. A row was manually added to ensure consistent representation across all metrics and states.
+This documentation provides a complete reference to understand the data processing and analysis logic behind the assignment.
 
-## Author
-
-Aditya Chettipalli
 
 
