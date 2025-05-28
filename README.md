@@ -68,15 +68,11 @@ To complement the analysis, the following visualizations were created:
 ## Output
 
 * `output.csv`: Final cleaned and enriched data file.
-* Visual plots exported as images or displayed inline in Jupyter Notebook.
+* Visual plots are displayed inline in Jupyter Notebook.
 
 ## Usage
 
 This project can be run in a Jupyter Notebook environment. Ensure all required data files are correctly placed and paths updated before execution.
-
----
-
-This documentation provides a complete reference to understand the data processing and analysis logic behind the assignment.
 
 
 
